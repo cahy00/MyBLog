@@ -1,1 +1,3 @@
-<p>ini baru index</p>
+@foreach ($post as $item)
+		{{$item}}
+@endforeach

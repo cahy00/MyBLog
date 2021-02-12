@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
-
+use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
     /**
@@ -40,15 +40,27 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-				$path = $request->file('image')->store('');
+				//! $path = $request->file('image')->store('');
+				//! $path = Storage::putFile('public/img', $request->file('image')); 
+				//! $path = $request->file('image')->storeAs('public', 'gambar');
+				//! $path = $request->file('image')->storeAs('public/img', $newName);
+				
+				$file = $request->file('image');
+				$name_file = time();
+				$ext_file = $file->getClientOriginalExtension();
+				$newName = $name_file . "." . $ext_file;
+				$path = Storage::putFileAs('public/img', $request->file('image'), $newName);
+
+				//* input data
         $post = Post::create([
 					'title' => $request->title,
 					'category_id' => 1,
 					'body'  => $request->body,
 					'image' => $path
 				]);
-
-				return 'berhasil';
+				
+				return 'berhasil bosku';
+				// dd($request->file('image'));
     }
 
     /**

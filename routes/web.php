@@ -18,4 +18,9 @@ Route::get('/layouts', function () {
     return view('layouts.index');
 });
 
-Route::get('/post', [PostController::class, 'index']);
+
+// Route::group(['prefix' => 'post'], function () {
+	Route::get('/post', [PostController::class, 'index']);
+	Route::get('/input-post', [PostController::class, 'create']);
+	Route::post('/store-post', [PostController::class, 'store']);
+// });

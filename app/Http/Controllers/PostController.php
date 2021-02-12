@@ -29,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -40,7 +40,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+				$path = $request->file('image')->store('');
+        $post = Post::create([
+					'title' => $request->title,
+					'category_id' => 1,
+					'body'  => $request->body,
+					'image' => $path
+				]);
+
+				return 'berhasil';
     }
 
     /**

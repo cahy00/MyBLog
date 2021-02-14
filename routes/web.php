@@ -23,4 +23,6 @@ Route::get('/layouts', function () {
 	Route::get('/post', [PostController::class, 'index']);
 	Route::get('/input-post', [PostController::class, 'create']);
 	Route::post('/store-post', [PostController::class, 'store']);
+	Route::put('/update-post', [PostController::class, 'update']);
+
 // });

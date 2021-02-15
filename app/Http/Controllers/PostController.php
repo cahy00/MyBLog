@@ -49,15 +49,25 @@ class PostController extends Controller
 				$name_file = time();
 				$ext_file = $file->getClientOriginalExtension();
 				$newName = $name_file . "." . $ext_file;
-				$path = Storage::putFileAs('public/img', $request->file('image'), $newName);
+				// $path = Storage::putFileAs('public/img', $request->file('image'), $newName);
 
 				//* input data
-        $post = Post::create([
-					'title' => $request->title,
-					'category_id' => 1,
-					'body'  => $request->body,
-					'image' => $path
-				]);
+        // $post = Post::create([
+				// 	'title' => $request->title,
+				// 	'category_id' => 1,
+				// 	'body'  => $request->body,
+				// 	'image' => $path,
+				// ]);
+
+				$post = New Post;
+				$post->title = $request->title;
+				$post->category_id = 1;
+				$post->body = $request->body;
+				if($request->hasFile('image')){
+					$request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+					$post->image = $request->file('image')->getClientOriginalName();
+					$post->save();
+				}
 				
 				return 'berhasil bosku';
 				// dd($request->file('image'));

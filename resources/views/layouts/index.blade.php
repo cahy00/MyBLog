@@ -35,12 +35,12 @@
                 <ul class="navbar-nav d-none d-lg-flex">
 										<li class="nav-item active">
 												<a class="nav-link nav-link-btn" href="#!" data-toggle="searchModal">
-														<img src="assets/images/search.svg" alt="search">
+														<img src="images/search.svg" alt="search">
 												</a>
 										</li>
                     <li class="nav-item ml-5">
                         <a class="nav-link pr-0 nav-link-btn" href="#!" data-toggle="offCanvasMenu">
-                            <img src="assets/images/social icon@2x.svg" alt="social-nav-toggle">
+                            <img src="images/social icon@2x.svg" alt="social-nav-toggle">
                         </a>
                     </li>
                 </ul>

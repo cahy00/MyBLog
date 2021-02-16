@@ -5,10 +5,10 @@
 		<article class="blog-post wow fadeInUp">
 			<img src="{{$item->image}}" alt="blog post" class="post-thumbnail img-thumbnail">
 			{{-- Format waktu January 29, 2020 --}}
-			<p class="post-date">{{$item->created_at->format('M d, Y')}}</p> 
+			<p class="post-date">{{$item->created_at->format('M d, Y')}} by Sulistyo Cahyo</p> 
 			<h4 class="post-title">{{$item->title}}</h4>
-			<p class="post-excerpt">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
-			<a href="#!" class="post-permalink">READ MORE</a>
+			<p class="post-excerpt">{{substr($item->body, 0, 50)}}</p>
+			<a href="{{route('post.show', $item->id)}}" class="post-permalink">READ MORE</a>
 		</article>
 	@endforeach
 	

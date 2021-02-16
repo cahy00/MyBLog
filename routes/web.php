@@ -24,6 +24,6 @@ Route::get('/layouts', function () {
 	Route::get('/input-post', [PostController::class, 'create']);
 	Route::post('/store-post', [PostController::class, 'store']);
 	Route::put('/update-post', [PostController::class, 'update']);
-	Route::get('/show-post', [PostController::class, 'show']);
+	Route::get('/show-post/{id}', [PostController::class, 'show'])->name('post.show');
 
 // });

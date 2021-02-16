@@ -3,7 +3,7 @@
 @section('content-md-8')
 	@foreach ($post as $item)
 		<article class="blog-post wow fadeInUp">
-			<img src="assets/images/Standard_list_blog/Standard_1@2x.jpg" alt="blog post" class="post-thumbnail">
+			<img src="{{$item->image}}" alt="blog post" class="post-thumbnail img-thumbnail">
 			{{-- Format waktu January 29, 2020 --}}
 			<p class="post-date">{{$item->created_at->format('M d, Y')}}</p> 
 			<h4 class="post-title">{{$item->title}}</h4>

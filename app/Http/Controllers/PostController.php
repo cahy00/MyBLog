@@ -79,9 +79,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        // $post = DB::select('post')->where('id' == 1);
+				$post = Post::all();
+				return view('post.show', \compact('post'));
     }
 
     /**

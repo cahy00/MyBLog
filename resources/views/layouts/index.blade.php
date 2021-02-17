@@ -48,19 +48,7 @@
         </nav>
     </header>
 
-    <main class="blog-standard">
-        <div class="container">
-            <div class="row">
-							<div class="col-md-8">
-								@yield('content-md-8')
-							</div>
-
-							<div class="col-md-4">
-								@yield('content-md-4')
-							</div>
-						</div>
-        </div>
-    </main>
+    @yield('content')
     
     <footer class="oleez-footer">
         <div class="container">

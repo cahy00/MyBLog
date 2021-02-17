@@ -3,12 +3,12 @@
 @section('content')
 <main class="blog-post-single">
 	<div class="container">
-			<h1 class="post-title wow fadeInUp">{{$post->title}}</h1>
+			<h1 class="post-title wow fadeInUp">Blog Standard</h1>
 			<div class="row">
 					<div class="col-md-8 blog-post-wrapper">
 							<div class="post-header wow fadeInUp">
-									<img src="{{$post->image}}" alt="blog post" class="post-featured-image">
-									<p class="post-date">{{$post->created_at->format('M d, Y')}}</p>
+									<img src="assets/images/Blog_single/Blog_single@2x.jpg" alt="blog post" class="post-featured-image">
+									<p class="post-date">January 29, 2020</p>
 							</div>
 							<div class="post-content wow fadeInUp">
 									<h4>Why you must experience design at least once</h4>

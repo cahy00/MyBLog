@@ -1,8 +1,11 @@
 @extends('layouts.index')
 
+@push('name')
+		
+@endpush
 
 @section('content')
-{{-- <main class="blog-post-single">
+<main class="blog-post-single">
 	<div class="container">
 		<h1 class="post-title wow fadeInUp">Berkarya sesukamu</h1>
 		<div class="row">
@@ -16,8 +19,8 @@
 						@csrf
 							<div class="row">
 									<div class="form-group col-md-6">
-											<input type="text" class="oleez-input" id="fullName" name="fullName" required>
-											<label for="fullName">*Title</label>
+											<input type="text" class="oleez-input" id="title" name="title" required>
+											<label for="title">*Title</label>
 									</div>
 							</div>
 							<div class="row">
@@ -45,19 +48,15 @@
 			</div>
 		</div>
 	</div>
-</main> --}}
+</main>
 
 
-<form action="/store-post" method="POST" enctype="multipart/form-data">
+{{-- <form action="/store-post" method="POST" enctype="multipart/form-data">
 	@csrf
 	<div class="form-group">
 		<label for="title">Judul</label>
 		<input type="text" name="title" id="title" class="form-control">
 	</div>
-	{{-- <div class="form-group">
-		<label for="body">Isi</label>
-		<input type="text" name="body" id="body" >
-	</div> --}}
 	<div class="form-group">
 		<label for="body">Isi</label>
 		<textarea name="body" id="body" cols="30" rows="10"></textarea>
@@ -66,13 +65,22 @@
 		<input type="file" name="image">
 	</div>
 	<button type="submit">Simpan</button>
-</form>
+</form> --}}
 @endsection
 
 @push('script')
+
+
 <script>
 	$(document).ready(function() {
   $('#body').summernote();
 });
 </script>
 @endpush
+
+@push('script')
+<script>
+	new WOW().init();
+</script>
+@endpush
+

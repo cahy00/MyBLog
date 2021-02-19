@@ -131,4 +131,9 @@ class PostController extends Controller
     {
         //
     }
+
+		public function indexCategory()
+		{
+			return 'ini index category';
+		}
 }

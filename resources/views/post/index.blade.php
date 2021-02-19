@@ -16,12 +16,14 @@
 						</article>
 					@endforeach
 	
-						<nav class="oleez-pagination wow fadeInUp">
+						{{-- <nav class="oleez-pagination wow fadeInUp">
 							<a href="#!" class="active">01</a>
 							<a href="#!">02</a>
 							<a href="#!">03</a>
 							<a href="#!" class="next">&rarr;</a>
-						</nav>
+						</nav> --}}
+
+						{{$post->links('pagination-links')}}
 				</div>
 
 				<div class="col-md-4">

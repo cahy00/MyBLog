@@ -48,18 +48,22 @@ class PostController extends Controller
 				//! $path = $request->file('image')->storeAs('public', 'gambar');
 				//! $path = $request->file('image')->storeAs('public/img', $newName);
 				
-				$file = $request->file('image');
+				$file      = $request->file('image');
 				$name_file = time();
-				$ext_file = $file->getClientOriginalExtension();
-				$newName = $name_file . "." . $ext_file;
-				$path = Storage::putFileAs('public/img', $request->file('image'), $newName);
+				$ext_file  = $file->getClientOriginalExtension();
+				$newName   = $name_file . "." . $ext_file;
+				$path      = Storage::putFileAs('public/img', $request->file('image'), $newName);
 
-				//* input data
+				
+				/**
+				 *! input data
+				 *! post photo using storage
+				 */
         $post = Post::create([
-					'title' => $request->title,
+					'title'       => $request->title,
 					'category_id' => 1,
-					'body'  => $request->body,
-					'image' => 'storage/img/' . $newName
+					'body'        => $request->body,
+					'image'       => 'storage/img/' . $newName
 				]);
 
 				// $post = New Post;

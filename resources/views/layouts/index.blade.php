@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cahyo Diary's</title>
-    <link rel="stylesheet" href="./assets/vendors/animate.css/animate.min.css">
-    <link rel="stylesheet" href="./assets/vendors/fancybox/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('assets/vendors/animate.css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendors/fancybox/jquery.fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 </head>
 
 <body>
@@ -35,12 +35,12 @@
                 <ul class="navbar-nav d-none d-lg-flex">
 										<li class="nav-item active">
 												<a class="nav-link nav-link-btn" href="#!" data-toggle="searchModal">
-														<img src="images/search.svg" alt="search">
+														<img src="{{asset('images/search.svg')}}" alt="search">
 												</a>
 										</li>
                     <li class="nav-item ml-5">
                         <a class="nav-link pr-0 nav-link-btn" href="#!" data-toggle="offCanvasMenu">
-                            <img src="images/social icon@2x.svg" alt="social-nav-toggle">
+                            <img src="{{asset('images/social icon@2x.svg')}}" alt="social-nav-toggle">
                         </a>
                     </li>
                 </ul>
@@ -59,11 +59,12 @@
         </div>
     </footer>
 
-    <script src="assets/vendors/popper.js/popper.min.js"></script>
-    <script src="assets/vendors/wowjs/wow.min.js"></script>
-    <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/vendors/fancybox/jquery.fancybox.min.js"></script>
-    <script src="assets/js/main.js"></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
+    <script src="{{asset('assets/vendors/popper.js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/wowjs/wow.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/fancybox/jquery.fancybox.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
     <script>
         new WOW().init();
     </script>

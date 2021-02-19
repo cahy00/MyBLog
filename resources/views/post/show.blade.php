@@ -7,7 +7,7 @@
 			<div class="row">
 					<div class="col-md-8 blog-post-wrapper">
 							<div class="post-header wow fadeInUp">
-									<img src="{{$post->image}}" alt="blog post" class="post-featured-image">
+									<img src="{{asset($post->image)}}" alt="blog post" class="post-featured-image">
 									<p class="post-date">{{$post->created_at->format('M d, Y')}}</p>
 							</div>
 							<div class="post-content wow fadeInUp">

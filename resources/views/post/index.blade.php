@@ -11,7 +11,7 @@
 							{{-- Format waktu January 29, 2020 --}}
 							<p class="post-date">{{$item->created_at->format('M d, Y')}} by Sulistyo Cahyo</p> 
 							<h4 class="post-title">{{$item->title}}</h4>
-							<p class="post-excerpt">{{substr($item->body, 0, 50)}}</p>
+							<p class="post-excerpt">{!!substr($item->body, 0, 50)!!}</p>
 							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE</a>
 						</article>
 					@endforeach

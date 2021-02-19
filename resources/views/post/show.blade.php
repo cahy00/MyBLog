@@ -86,3 +86,9 @@
 	</div>
 </main>
 @endsection
+
+@push('script')
+<script>
+	new WOW().init();
+</script>
+@endpush

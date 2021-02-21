@@ -11,9 +11,11 @@ Route::get('/', function () {
 		$post = DB::table('posts')->simplePaginate(2);
 		return view('try.index', ['post' => $post]);
 });
+
+Route::get('/post/?');
 	
-	Route::get('/post', [PostController::class, 'index']);
-	Route::get('/input-post', [PostController::class, 'create']);
-	Route::post('/store-post', [PostController::class, 'store'])->name('post.store');
-	Route::put('/update-post', [PostController::class, 'update']);
-	Route::get('/show-post/{id}', [PostController::class, 'show'])->name('post.show');
+Route::get('/post', [PostController::class, 'index']);
+Route::get('/input-post', [PostController::class, 'create']);
+Route::post('/store-post', [PostController::class, 'store'])->name('post.store');
+Route::put('/update-post', [PostController::class, 'update']);
+Route::get('/show-post/{id}', [PostController::class, 'show'])->name('post.show');

@@ -16,7 +16,7 @@
 						</article>
 					@endforeach
 					<span>
-						{{$post->links('pagination-links')}}
+						{{$post->links()}}
 					</span>
 				</div>
 
@@ -47,6 +47,7 @@
 <style>
 	.w-5{
 		display: none;
-		width: 25px;
+		width: 15px;
+		padding: 15px;
 	}
 </style>

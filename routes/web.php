@@ -2,18 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-    return view('post.show');
+		$post = DB::table('posts')->paginate(2);
+		return view('post.test', ['post' => $post]);
 });
-
-
-// Route::group(['prefix' => 'post'], function () {
 	
 	Route::get('/post', [PostController::class, 'index']);
 	Route::get('/input-post', [PostController::class, 'create']);
 	Route::post('/store-post', [PostController::class, 'store'])->name('post.store');
 	Route::put('/update-post', [PostController::class, 'update']);
 	Route::get('/show-post/{id}', [PostController::class, 'show'])->name('post.show');
-
-// });

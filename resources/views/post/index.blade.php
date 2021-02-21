@@ -15,16 +15,9 @@
 							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE</a>
 						</article>
 					@endforeach
-	
-						{{-- <nav class="oleez-pagination wow fadeInUp">
-							<a href="#!" class="active">01</a>
-							<a href="#!">02</a>
-							<a href="#!">03</a>
-							<a href="#!" class="next">&rarr;</a>
-						</nav> --}}
-
-						{{$post->links('pagination-links')}}
 				</div>
+				{{$post->links()}}
+
 
 				<div class="col-md-4">
 					<div class="sidebar-widget wow fadeInUp">
@@ -44,3 +37,7 @@
 	</div>
 </main>
 @endsection
+
+@push('script')
+
+@endpush

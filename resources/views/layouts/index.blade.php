@@ -70,8 +70,8 @@
 
 
 		@stack('script')
-		<script src="{{asset('assets/summernote/summernote.js')}}"></script>
-		<script src="{{asset('assets/summernote/summernote-bs4.js')}}"></script>
+		{{-- <script src="{{asset('assets/summernote/summernote.js')}}"></script>
+		<script src="{{asset('assets/summernote/summernote-bs4.js')}}"></script> --}}
     <script src="{{asset('assets/vendors/popper.js/popper.min.js')}}"></script>
     <script src="{{asset('assets/vendors/wowjs/wow.min.js')}}"></script>
     <script src="{{asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>

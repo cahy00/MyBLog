@@ -15,8 +15,10 @@
 							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE</a>
 						</article>
 					@endforeach
+					<span>
+						{{$post->links('pagination-links')}}
+					</span>
 				</div>
-				{{$post->links()}}
 
 
 				<div class="col-md-4">
@@ -41,3 +43,10 @@
 @push('script')
 
 @endpush
+
+<style>
+	.w-5{
+		display: none;
+		width: 25px;
+	}
+</style>

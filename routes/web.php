@@ -8,8 +8,8 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-		$post = DB::table('posts')->paginate(2);
-		return view('post.test', ['post' => $post]);
+		$post = DB::table('posts')->simplePaginate(2);
+		return view('try.index', ['post' => $post]);
 });
 	
 	Route::get('/post', [PostController::class, 'index']);

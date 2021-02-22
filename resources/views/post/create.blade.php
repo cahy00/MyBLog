@@ -19,23 +19,23 @@
 						@csrf
 							<div class="row">
 									<div class="form-group col-md-6">
-											<input type="text" class="oleez-input" id="title" name="title" required>
+											<input type="text" class="oleez-input" id="title" name="title" required autocomplete="off" autofocus>
 											<label for="title">*Title</label>
 									</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
-									<input type="text" class="oleez-input" id="category" name="id" required >
+									<input type="text" class="oleez-input" id="category" name="id" required autocomplete="off">
 									<label for="category">*Category</label>
 							</div>
 								<div class="form-group col-md-6">
-									<input type="file" name="image" class="oleez-input" id="image">
+									<input type="file" name="image" class="oleez-input" id="image" required autocomplete="off">
 								</div>
 							</div>
 							<div class="row">
 									<div class="form-group col-12">
 											<label for="body">*Article</label>
-											<textarea name="body" id="body" rows="10" class="oleez-textarea" required></textarea>
+											<textarea name="body" id="body" rows="10" class="oleez-textarea" required autocomplete="off"></textarea>
 									</div>
 							</div>
 							<div class="row">
@@ -49,23 +49,6 @@
 		</div>
 	</div>
 </main>
-
-
-{{-- <form action="/store-post" method="POST" enctype="multipart/form-data">
-	@csrf
-	<div class="form-group">
-		<label for="title">Judul</label>
-		<input type="text" name="title" id="title" class="form-control">
-	</div>
-	<div class="form-group">
-		<label for="body">Isi</label>
-		<textarea name="body" id="body" cols="30" rows="10"></textarea>
-	</div>
-	<div class="form-group">
-		<input type="file" name="image">
-	</div>
-	<button type="submit">Simpan</button>
-</form> --}}
 @endsection
 
 @push('script')

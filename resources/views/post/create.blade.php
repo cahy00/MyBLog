@@ -25,9 +25,9 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
-									<input type="text" class="oleez-input" id="category" name="category_id" required value="1">
+									<input type="text" class="oleez-input" id="category" name="id" required >
 									<label for="category">*Category</label>
-								</div>
+							</div>
 								<div class="form-group col-md-6">
 									<input type="file" name="image" class="oleez-input" id="image">
 								</div>

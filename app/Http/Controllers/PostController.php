@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
     /**
@@ -16,7 +18,6 @@ class PostController extends Controller
     public function index()
     {
 				//$post = Post::orderBy('created_at', 'DESC')->paginate(10)->category();
-				// $category = Category::all();
 				$post = Post::with('category')->orderBy('created_at', 'ASC')->paginate(4);
         return view('post.index', compact('post'));
 				
@@ -29,7 +30,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+				// $category = Category::all();
+				$category = DB::table('categories')->get();
+        return view('post.create', \compact('category'));
     }
 
     /**
@@ -63,7 +66,8 @@ class PostController extends Controller
 					'title'       => $request->title,
 					'category_id' => 1,
 					'body'        => $request->body,
-					'image'       => 'storage/img/' . $newName
+					'image'       => 'storage/img/' . $newName,
+					'slug'				=> Str::slug($request->title)
 				]);
 
 				// $post = New Post;
@@ -75,6 +79,7 @@ class PostController extends Controller
 				// 	$post->image = $request->file('image')->getClientOriginalName();
 				// 	$post->save();
 				// }
+
 				
 				return 'berhasil bosku';
 
@@ -135,5 +140,16 @@ class PostController extends Controller
 		public function indexCategory()
 		{
 			return 'ini index category';
+		}
+
+		public function test()
+		{
+			$category = Post::all();
+			return view('try.index', \compact('category'));
+		}
+
+		public function testShow(Request $request)
+		{
+			return $request->name;
 		}
 }

@@ -35,11 +35,9 @@
 						<h5 class="widget-title">Categories</h5>
 						<div class="widget-content">
 								<ul class="category-list">
-										<li><a href="#!">Animation(12)</a></li>
-										<li><a href="#!">Branding(2)</a></li>
-										<li><a href="#!">Graphic Design(2)</a></li>
-										<li><a href="#!">Photography</a></li>
-										<li><a href="#!">Web Developing</a></li>
+									@foreach ($category as $item)
+										<li><a href="">{{$item->category_name}}</a></li>
+									@endforeach
 								</ul>
 						</div>
 					</div>

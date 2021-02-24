@@ -17,9 +17,10 @@ class PostSeeder extends Seeder
 				Post::insert([
 					'title' => 'ini judul pertama',
 					'body'  => 'ini adalah isi dari judul pertama mohon maklum',
-					'image' => 'Screenshot from 2021-01-21 19-49-24.png',
+					'image' => 'image.jpg',
 					'category_id' => 1,
-					'slug'  => 'ini-judul-pertama'
+					'slug'  => 'ini-judul-pertama',
+					'created_at' => now(),
 				]);
     }
 }

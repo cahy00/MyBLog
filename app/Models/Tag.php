@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+		protected $fillable = [
+			'tag_name', 'slug'
+		];
+
+		public function posts()
+		{
+			return $this->belongsTo(Post::class);
+		}
 }

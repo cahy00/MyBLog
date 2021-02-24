@@ -3,20 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 
-// Route::get('/', function () {
-// 		$post = DB::table('posts')->simplePaginate(2);
-// 		return view('try.index', ['post' => $post]);
-// });
+/**
+ * ?Route Tag
+ */
+Route::get('/tag', function(){
+	$tag = Tag::with(['posts'])->first();
+	$post = Post::with(['tags'])->get();
+	return view('tag.index', compact('tag', 'post'));
+});
 
-Route::get('/test', [PostController::class, 'test']);
-Route::post('/show-test', [PostController::class, 'testShow']);
-	
-
-Route::get('/tag', [TagController::class, 'index']);
+/**
+ *? Route Post
+ */
 Route::get('/post', [PostController::class, 'index']);
 Route::get('/input-post', [PostController::class, 'create']);
 Route::post('/store-post', [PostController::class, 'store'])->name('post.store');

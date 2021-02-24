@@ -9,8 +9,7 @@ class CategoryController extends Controller
 {
     public function index()
 		{
-			// $category = Category::get();
-			// return view('post.index', \compact('category'));
-			// return 'ini category';
+			$category = Category::get();
+			return view('post.index', \compact('category'));
 		}
 }

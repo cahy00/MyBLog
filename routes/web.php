@@ -12,11 +12,8 @@ use Illuminate\Support\Facades\DB;
 /**
  * ?Route Tag
  */
-Route::get('/tag', function(){
-	$tag = Tag::with(['posts'])->first();
-	$post = Post::with(['tags'])->get();
-	return view('tag.index', compact('tag', 'post'));
-});
+Route::get('/tag', [TagController::class, 'index']);
+Route::post('/store-tag', [TagController::class, 'store']);
 
 /**
  *? Route Post

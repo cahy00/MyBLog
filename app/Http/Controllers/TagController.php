@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Tag;
 use App\Models\Post;
 use App\Models\Category;
-
+use Illuminate\Support\Str;
 class TagController extends Controller
 {
     public function index()
 		{
-			// $post = Post::with('category')->orderBy('created_at', 'ASC');
-			// $category = Category::all();
-			// return view('try.coba', compact('post', 'category'));
+			$tag = Tag::with(['posts'])->get();
+			// $post = Post::with(['tags'])->get();
+			$post = Post::findOrFail(1)->tags;
+			return view('tag.index', compact('tag', 'post'));
 		}
 
 		public function showData()
@@ -24,7 +25,15 @@ class TagController extends Controller
 
 		public function store(Request $request)
 		{
-			return $request->all();
+			$post = Post::insert([
+				'title' => $request->title,
+				'body'  => $request->body,
+				'category_id' => 1,
+				'slug'  => Str::slug($request->title),
+				'image' => 'storage/img/ss-pembohong.png'
+			]);
+			return 'berhasil';
+			// return $request->all();
 		}
 
 

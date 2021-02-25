@@ -1,4 +1,4 @@
-@extends('layouts.index')
+{{-- @extends('layouts.index')
 @section('content')
 <form action="/store-tag" method="POST">
 	@csrf
@@ -26,4 +26,12 @@
 		})
 	});
 </script>
-@endpush
+@endpush --}}
+
+@foreach ($post as $item)
+{{$item}}
+@endforeach
+<hr>
+@foreach ($tag as $item)
+{{$item->tag_name}}
+@endforeach

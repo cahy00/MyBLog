@@ -12,8 +12,8 @@ class Tag extends Model
 			'tag_name', 'slug'
 		];
 
-		public function posts()
-		{
-			return $this->belongsTo(Post::class);
-		}
+		// public function posts()
+		// {
+		// 	return $this->hasMany(Post::class);
+		// }
 }

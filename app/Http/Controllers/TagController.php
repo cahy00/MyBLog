@@ -11,10 +11,24 @@ class TagController extends Controller
 {
     public function index()
 		{
-			$tag = Tag::with(['posts'])->get();
-			// $post = Post::with(['tags'])->get();
-			$post = Post::findOrFail(1)->tags;
-			return view('tag.index', compact('tag', 'post'));
+			$post = Post::create([
+				'title' => 'ini title baru',
+				'body'  => 'ini text baru broku',
+				'image' => 'image.jpg',
+				'category_id' => 1,
+				'slug'  => 'ini-title-baru',
+				'created_at' => now(),
+				'updated_at' => now()
+			]);
+
+			$post->tags()->create([
+				'tag_name' => 'creative post',
+				'slug'     => 'creative-post',
+				'created_at' => now(),
+				'updated_at' => now(),
+			]);
+
+			return 'berhasil';
 		}
 
 		public function showData()

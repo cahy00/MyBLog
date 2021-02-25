@@ -9,6 +9,7 @@ use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 class PostController extends Controller
 {
     /**
@@ -87,9 +88,10 @@ class PostController extends Controller
 				// 	$post->save();
 				// }
 
-				
-				return \redirect()->back();
+				return Alert::success('Success Title', 'Success Message');
 
+				
+				//return \redirect('/input-post')->with('toast_success', 'Task Created Successfully!');
 
 			} catch (\Exception $e) {
 					return $e->getMessage();

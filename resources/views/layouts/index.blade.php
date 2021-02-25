@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,6 +84,8 @@
     <script>
         new WOW().init();
     </script>
+@include('sweetalert::alert')
+
 </body>
 
 

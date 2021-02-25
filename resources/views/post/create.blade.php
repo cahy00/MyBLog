@@ -1,9 +1,5 @@
 @extends('layouts.index')
 
-@push('name')
-		
-@endpush
-
 @section('content')
 <main class="blog-post-single">
 	<div class="container">
@@ -12,9 +8,9 @@
 			<div class="col-md-8 blog-post-wrapper">
 				<div class="comment-section wow fadeInUp">
 					<h5 class="section-title">Mengetik....</h5>
-					@if (session('success'))
+					{{-- @if (session('success'))
 							<div class="alert alert-success">Berhasil Input</div>
-					@endif
+					@endif --}}
 					<form action="/store-post" class="oleez-comment-form" method="POST" enctype="multipart/form-data">
 						@csrf
 							<div class="row">
@@ -63,7 +59,10 @@
 		</div>
 	</div>
 </main>
+@include('sweetalert::alert')
+
 @endsection
+
 
 @push('script')
 
@@ -76,6 +75,9 @@
 			theme: 'bootstrap4'
 		})
 	});
+</script>
+<script>
+
 </script>
 <script>
 	$(document).ready(function() {

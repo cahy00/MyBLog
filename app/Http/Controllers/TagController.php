@@ -11,15 +11,16 @@ class TagController extends Controller
 {
     public function index()
 		{
-			$post = Post::create([
-				'title' => 'ini title baru',
-				'body'  => 'ini text baru broku',
-				'image' => 'image.jpg',
-				'category_id' => 1,
-				'slug'  => 'ini-title-baru',
-				'created_at' => now(),
-				'updated_at' => now()
-			]);
+			// $post = Post::create([
+			// 	'title' => 'ini title baru',
+			// 	'body'  => 'ini text baru broku',
+			// 	'image' => 'image.jpg',
+			// 	'category_id' => 1,
+			// 	'slug'  => 'ini-title-baru',
+			// 	'created_at' => now(),
+			// 	'updated_at' => now()
+			// ]);
+			$post = Post::find(1);
 
 			$post->tags()->create([
 				'tag_name' => 'creative post',

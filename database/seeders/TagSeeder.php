@@ -15,10 +15,12 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
+			
         $tag = New Tag;
-				$tag->tag_name = 'creative post';
-				$tag->post_id = 1;
+				$tag->tag_name = 'marketing';
+				$tag->post_id = 2;
 				$tag->slug = Str::slug($tag->tag_name);
 				$tag->save();
+
     }
 }

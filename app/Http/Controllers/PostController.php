@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -31,9 +32,9 @@ class PostController extends Controller
      */
     public function create()
     {
-				// $category = Category::all();
+				$tag = Tag::all();
 				$category = DB::table('categories')->get();
-        return view('post.create', \compact('category'));
+        return view('post.create', \compact('category', 'tag'));
     }
 
     /**
@@ -71,6 +72,11 @@ class PostController extends Controller
 					'slug'				=> Str::slug($request->title)
 				]);
 
+				$post->tags()->create([
+					'tag_name' => $request->tag,
+					'slug'  	 => Str::slug($request->tag)
+				]);
+
 				// $post = New Post;
 				// $post->title = $request->title;
 				// $post->category_id = 1;
@@ -82,7 +88,7 @@ class PostController extends Controller
 				// }
 
 				
-				return 'berhasil bosku';
+				return \redirect()->back();
 
 
 			} catch (\Exception $e) {

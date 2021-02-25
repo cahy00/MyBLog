@@ -15,14 +15,18 @@
 						@csrf
 							<div class="row">
 									<div class="form-group col-md-6">
-											<input type="text" class="oleez-input" id="title" name="title" required autocomplete="off" autofocus>
+											<input type="text" class="oleez-input @error('title') is-invalid @enderror" id="title" name="title" required autocomplete="off" autofocus value="{{old('title')}}" >
 											<label for="title">*Title</label>
+											@error('title')
+													<div class="alert alert-danger">{{$errors->first('title')}}</div>
+											@enderror
+											{{-- <p class="text-danger">{{ $errors->first('nis') }}</p> --}}
 									</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
 										<label>*Tags</label>
-										<select class="select2" name="tag" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;">
+										<select class="select2" name="tag" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;" value="{{old('tag')}}" >
 											@foreach ($tag as $item)
 												<option>{{$item->tag_name}}</option>
 											@endforeach

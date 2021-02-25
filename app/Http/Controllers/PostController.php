@@ -21,7 +21,7 @@ class PostController extends Controller
     {
 				//$post = Post::orderBy('created_at', 'DESC')->paginate(10)->category();
 				$category = Category::all();
-				$post = Post::with('category')->orderBy('created_at', 'ASC')->paginate(4);
+				$post = Post::with('category')->orderBy('created_at', 'DESC')->paginate(4);
         return view('post.index', compact('post', 'category'));
 				
     }
@@ -48,6 +48,13 @@ class PostController extends Controller
     {
 				
 			try {
+				$request->validate([
+					'title' => 'required|min:10|max:30|',
+					'body'  => 'required|min:50|max:300',
+					'category_id' => 'required',
+					'tag_id' => 'required',
+					'image' => 'required|image|mimes:jpeg,png,jpg|size:1000',
+				]);
 
 				//! $path = $request->file('image')->store('');
 				//! $path = Storage::putFile('public/img', $request->file('image')); 
@@ -78,15 +85,15 @@ class PostController extends Controller
 					'slug'  	 => Str::slug($request->tag)
 				]);
 
-				// $post = New Post;
-				// $post->title = $request->title;
-				// $post->category_id = 1;
-				// $post->body = $request->body;
-				// if($request->hasFile('image')){
-				// 	$request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
-				// 	$post->image = $request->file('image')->getClientOriginalName();
-				// 	$post->save();
-				// }
+				//? $post = New Post;
+				//? $post->title = $request->title;
+				//? $post->category_id = 1;
+				//? $post->body = $request->body;
+				//? if($request->hasFile('image')){
+				//?	$request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+				//? 	$post->image = $request->file('image')->getClientOriginalName();
+				//? 	$post->save();
+				//? }
 
 				return Alert::success('Success Title', 'Success Message');
 

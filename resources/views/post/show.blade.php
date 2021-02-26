@@ -19,8 +19,8 @@
 								@endforeach
 							</div>
 							<div class="post-navigation wow fadeInUp">
-									{{-- <a href="{{$post->id - 1}}" class="btn prev-post"> Prev Post</a>
-									<a href="{{$post->id + 1}}" class="btn next-post"> Next Post</a> --}}
+									<a href="{{$post->id - 1}}" class="btn prev-post"> Prev Post</a>
+									<a href="{{$post->id + 1}}" class="btn next-post"> Next Post</a>
 							</div>
 							<div class="comment-section wow fadeInUp">
 									<h5 class="section-title">Leave a Reply</h5>

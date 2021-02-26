@@ -9,7 +9,7 @@
 				<div class="comment-section wow fadeInUp">
 					<h5 class="section-title">Mengetik....</h5>
 					@if (session('success'))
-							<div class="alert alert-success">Berhasil Input</div>
+							<div class="alert alert-success" id="success-alert">{{session('success')}}</div>
 					@endif
 					@if (session('error'))
 							<div class="alert alert-danger">Berhasil Input</div>
@@ -66,7 +66,7 @@
 		</div>
 	</div>
 </main>
-@include('sweetalert::alert')
+{{-- @include('sweetalert::alert') --}}
 
 @endsection
 
@@ -84,7 +84,11 @@
 	});
 </script>
 <script>
-
+$(function(){
+	setTimeout(() => {
+		$('#success-alert').innerHTML='';
+	}, 5000);
+});
 </script>
 <script>
 	$(document).ready(function() {

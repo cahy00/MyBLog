@@ -33,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-				$tag = Tag::all();
+				$tag = DB::table('tags')->distinct()->get(['tag_name']);
 				$category = DB::table('categories')->get();
         return view('post.create', \compact('category', 'tag'));
     }
@@ -95,7 +95,7 @@ class PostController extends Controller
 				//? 	$post->save();
 				//? }
 
-				return \redirect('create-post')->with('success', 'Tulisan Berhasil di Posting');
+				return \redirect('input-post')->with('success', 'Tulisan Berhasil di Posting');
 
 				
 				//return \redirect('/input-post')->with('toast_success', 'Task Created Successfully!');

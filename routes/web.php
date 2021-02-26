@@ -22,7 +22,7 @@ Route::get('/', function(){
 /**
  * ?Route Tag
  */
-Route::get('/tag', [TagController::class, 'index']);
+Route::get('/tag', [PostController::class, 'create']);
 Route::post('/store-tag', [TagController::class, 'store']);
 
 /**

@@ -113,7 +113,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-			$post = Post::with('tags')->find($id);
+			$post = Post::with('tags')->findOrFail($id);
 			// $tag = DB::table('tag')->where('id', $id);
 			return view('post.show', \compact('post'));
 

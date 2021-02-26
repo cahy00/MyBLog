@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-				@include('sweetalert::alert')
+				{{-- @include('sweetalert::alert') --}}
 
     </body>
 </html>

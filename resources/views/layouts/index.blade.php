@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
+		<link rel="icon" href="{{asset('assets/icons/fp.png')}}" type="image/x-icon">
 		<link rel="stylesheet" href="{{asset('assets/select2/css/select2.min.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/animate.css/animate.min.css')}}">

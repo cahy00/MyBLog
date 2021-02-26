@@ -14,12 +14,13 @@
 									{!!$post->body!!}
 							</div>
 							<div class="post-tags wow fadeInUp">
-									<a href="#!" class="post-tag">Design Studio</a>
-									<a href="#!" class="post-tag">Creative Design</a>
+								@foreach ($post->tags as $i)
+									<a href="#!" class="post-tag">{{$i->tag_name}}</a>
+								@endforeach
 							</div>
 							<div class="post-navigation wow fadeInUp">
-									<button class="btn prev-post"> Prev Post</button>
-									<button class="btn next-post"> Next Post</button>
+									{{-- <a href="{{$post->id - 1}}" class="btn prev-post"> Prev Post</a>
+									<a href="{{$post->id + 1}}" class="btn next-post"> Next Post</a> --}}
 							</div>
 							<div class="comment-section wow fadeInUp">
 									<h5 class="section-title">Leave a Reply</h5>
@@ -52,12 +53,9 @@
 						<div class="sidebar-widget wow fadeInUp">
 							<h5 class="widget-title">Tags</h5>
 							<div class="widget-content">
-									<a href="#!" class="post-tag">Design Studio</a>
-									<a href="#!" class="post-tag">Creative Design</a>
-									<a href="#!" class="post-tag">Marketing</a>
-									<a href="#!" class="post-tag">Typography</a>
-									<a href="#!" class="post-tag">Team</a>
-									<a href="#!" class="post-tag">Project</a>
+								@foreach ($post->tags as $i)
+									<a href="#!" class="post-tag">{{$i->tag_name}}</a>
+								@endforeach
 							</div>
 						</div>
 						<div class="sidebar-widget wow fadeInUp">

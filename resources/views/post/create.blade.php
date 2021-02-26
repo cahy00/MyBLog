@@ -8,9 +8,12 @@
 			<div class="col-md-8 blog-post-wrapper">
 				<div class="comment-section wow fadeInUp">
 					<h5 class="section-title">Mengetik....</h5>
-					{{-- @if (session('success'))
+					@if (session('success'))
 							<div class="alert alert-success">Berhasil Input</div>
-					@endif --}}
+					@endif
+					@if (session('error'))
+							<div class="alert alert-danger">Berhasil Input</div>
+					@endif
 					<form action="/store-post" class="oleez-comment-form" method="POST" enctype="multipart/form-data">
 						@csrf
 							<div class="row">

@@ -48,13 +48,13 @@ class PostController extends Controller
     {
 				
 			try {
-				$request->validate([
-					'title' => 'required|min:10|max:30|',
-					'body'  => 'required|min:50|max:300',
-					'category_id' => 'required',
-					'tag_id' => 'required',
-					'image' => 'required|image|mimes:jpeg,png,jpg|size:1000',
-				]);
+				// $request->validate([
+				// 	'title'       => 'required|max:30',
+				// 	'body'        => 'required|max:300',
+				// 	'category_id' => 'required',
+				// 	'tag_id'      => 'required',
+				// 	'image'       => 'required|image|mimes:jpeg,png,jpg',
+				// ]);
 
 				//! $path = $request->file('image')->store('');
 				//! $path = Storage::putFile('public/img', $request->file('image')); 
@@ -95,7 +95,7 @@ class PostController extends Controller
 				//? 	$post->save();
 				//? }
 
-				return Alert::success('Success Title', 'Success Message');
+				return \redirect('create-post')->with('success', 'Tulisan Berhasil di Posting');
 
 				
 				//return \redirect('/input-post')->with('toast_success', 'Task Created Successfully!');
@@ -113,8 +113,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-			$post = Post::find($id);
-			// $post = Post::all();
+			$post = Post::with('tags')->find($id);
+			// $tag = DB::table('tag')->where('id', $id);
 			return view('post.show', \compact('post'));
 
     }

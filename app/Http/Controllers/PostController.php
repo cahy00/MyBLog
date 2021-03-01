@@ -17,17 +17,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-				// $test = Post::orderBy('created_at', 'DESC')->paginate(5);
-				// if($test->count() > 5){
-				// 	return "lebih lima";
-				// }
-				
-				// dd($test);
-				$category = Category::all();
-				$post = Post::with('category')->orderBy('created_at', 'DESC')->paginate(1);
-        return view('post.index', compact('post', 'category'));
+				if($request->has('search')){
+					$post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
+				}else{
+					$category = Category::all();
+					$post = Post::with('category')->orderBy('created_at', 'DESC')->paginate(3);
+					return view('post.index', compact('post', 'category'));
+				}
+				// dd($request->all());
 				
     }
 
@@ -173,4 +172,16 @@ class PostController extends Controller
 		{
 			return $request->name;
 		}
+
+		public function searchData(Request $request)
+		{
+			// if($request->has('search')){
+			// 	$post = Post::where('title','LIKE','%' . $request->search . '%')->get();
+			// }else{
+			// 	$post = Post::with('category')->orderBy('created_at', 'DESC')->paginate(3);
+			// }
+			dd($request->all());
+		}
+
+		
 }

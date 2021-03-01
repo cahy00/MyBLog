@@ -62,7 +62,7 @@
 							<h5 class="widget-title">Share</h5>
 							<div class="widget-content">
 									<nav class="social-links">
-											<a href="#!"><img src="{{asset('assets/icons/fb.png')}}" alt="Facebook"></a>
+											<a href="#!"><img src="{{asset('assets/icons/fb.png')}}" alt="FB"></a>
 											<a href="#!"><img src="{{asset('assets/icons/twt.png')}}" alt="Twitter"></a>
 											<a href="#!"><img src="{{asset('assets/icons/ig.png')}}" alt="Instagram"></a>
 											<a href="#!"><img src="{{asset('assets/icons/link.png')}}" alt="Linkedin"></a>

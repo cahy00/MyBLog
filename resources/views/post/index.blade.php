@@ -10,7 +10,7 @@
 							<img src="{{$item->image}}" alt="blog post" class="post-thumbnail img-thumbnail" height="1640" width="924" style="height: 1640px">
 							{{-- Format waktu January 29, 2020 --}}
 							<p class="post-date">{{$item->created_at->format('M d, Y')}} by Sulistyo Cahyo</p> 
-							<h4 class="post-title">{{$item->title}}</h4>
+							<h4 class="post-title"><a href="/show-post/{{$item->id}}" style="text-decoration: none; color:black">{{$item->title}}</a></h4>
 							<p class="post-excerpt">{!!substr($item->body, 0, 150)!!}...</p>
 							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE</a>
 						</article>

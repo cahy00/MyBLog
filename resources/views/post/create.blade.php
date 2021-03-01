@@ -9,7 +9,7 @@
 				<div class="comment-section wow fadeInUp">
 					<h5 class="section-title">Mengetik....</h5>
 					@if (session('success'))
-							<div class="alert alert-success" id="success-alert">{{session('success')}}</div>
+							<div class="alert alert-success" id="success-alert">{{session('success')}} <a href="/post" class="btn btn-primary-sm" >Lihat</a></div>
 					@endif
 					@if (session('error'))
 							<div class="alert alert-danger">Berhasil Input</div>

@@ -16,7 +16,7 @@
 						</article>
 					@endforeach
 					<span>
-						{{$post->links()}}
+						{{$post->links('vendor.pagination.simple-bootstrap-4')}}
 					</span>
 				</div>
 

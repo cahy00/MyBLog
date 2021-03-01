@@ -87,6 +87,7 @@
 			</div>
 		</footer>
 		@show
+		{{-- @include('sweetalert::alert') --}}
 
 		@stack('script')
 		<script src="{{asset('assets/select2/js/select2.full.min.js')}}"></script>
@@ -98,7 +99,9 @@
     <script>
         new WOW().init();
     </script>
-{{-- @include('sweetalert::alert') --}}
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+		@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 </body>
 

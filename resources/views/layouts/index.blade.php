@@ -25,55 +25,58 @@
 </head>
 
 <body>
-    <header class="oleez-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/post">
-							<h3 class="page-title wow fadeInUp">BE DIFFERENT</h3>
-						</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#oleezMainNav" aria-controls="oleezMainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="oleezMainNav">
-                <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/post">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!">Contact</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav d-none d-lg-flex">
-										<li class="nav-item active">
-												<a class="nav-link nav-link-btn" href="#!" data-toggle="searchModal">
-														<img src="{{asset('images/search.svg')}}" alt="search">
-												</a>
-										</li>
-                    <li class="nav-item ml-5">
-                        <a class="nav-link pr-0 nav-link-btn" href="/input-post" data-toggle="offCanvasMenu">
-                            <img src="{{asset('images/social icon@2x.svg')}}" alt="social-nav-toggle">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+		@section('header')
+		<header class="oleez-header">
+			<nav class="navbar navbar-expand-lg navbar-light">
+					<a class="navbar-brand" href="/post">
+						<h3 class="page-title wow fadeInUp">BE DIFFERENT</h3>
+					</a>
+					<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#oleezMainNav" aria-controls="oleezMainNav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="oleezMainNav">
+							<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+									<li class="nav-item active">
+											<a class="nav-link" href="/post">Home <span class="sr-only">(current)</span></a>
+									</li>
+									<li class="nav-item">
+											<a class="nav-link" href="#!">Profile</a>
+									</li>
+									<li class="nav-item">
+											<a class="nav-link" href="#!">Contact</a>
+									</li>
+							</ul>
+							<ul class="navbar-nav d-none d-lg-flex">
+									<li class="nav-item active">
+											<a class="nav-link nav-link-btn" href="#!" data-toggle="searchModal">
+													<img src="{{asset('images/search.svg')}}" alt="search">
+											</a>
+									</li>
+									<li class="nav-item ml-5">
+											<a class="nav-link pr-0 nav-link-btn" href="/input-post" data-toggle="offCanvasMenu">
+													<img src="{{asset('images/social icon@2x.svg')}}" alt="social-nav-toggle">
+											</a>
+									</li>
+							</ul>
+					</div>
+			</nav>
+		</header>
+		@show
 
     @yield('content')
 
 		<br/>
     
-    <footer class="oleez-footer">
-        <div class="container">
-            <div class="footer-text">
-                <p class="mb-md-0">©  2020, oleez Theme. Made with passion by <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">BootstrapDash</a>.</p>
-                <p class="mb-0">All right reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+    @section('footer')
+		<footer class="oleez-footer">
+			<div class="container">
+					<div class="footer-text">
+							<p class="mb-md-0">©  2020, oleez Theme. Made with passion by <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">BootstrapDash</a>.</p>
+							<p class="mb-0">All right reserved.</p>
+					</div>
+			</div>
+		</footer>
+		@show
 
 		@stack('script')
 		<script src="{{asset('assets/select2/js/select2.full.min.js')}}"></script>

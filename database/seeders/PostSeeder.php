@@ -19,7 +19,6 @@ class PostSeeder extends Seeder
 					'body'  => 'ini adalah isi dari judul pertama mohon maklum',
 					'image' => 'image.jpg',
 					'category_id' => 1,
-					'tag_id' => 1,
 					'slug'  => 'ini-judul-pertama',
 					'created_at' => now(),
 					'updated_at' => now(),

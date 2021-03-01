@@ -18,7 +18,7 @@ class TagSeeder extends Seeder
 			
         $tag = New Tag;
 				$tag->tag_name = 'marketing';
-				$tag->post_id = 2;
+				$tag->post_id = 1;
 				$tag->slug = Str::slug($tag->tag_name);
 				$tag->save();
 

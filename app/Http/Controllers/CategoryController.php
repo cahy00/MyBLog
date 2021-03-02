@@ -9,7 +9,12 @@ class CategoryController extends Controller
 {
     public function index()
 		{
-			$category = Category::get();
-			return view('post.index', \compact('category'));
+			$cate = Category::orderBy('creaeted_at', 'DESC');
+			return view('post.index', compact('cate'));
+		}
+
+		public function show($id)
+		{
+			return $id;
 		}
 }

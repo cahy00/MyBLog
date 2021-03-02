@@ -36,7 +36,7 @@
 						<div class="widget-content">
 								<ul class="category-list">
 									@foreach ($category as $item)
-										<li><a href="">{{$item->category_name}}</a></li>
+										<li><a href="/get-category/{{$item->id}}">{{$item->category_name}}</a></li>
 									@endforeach
 								</ul>
 						</div>

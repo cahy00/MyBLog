@@ -20,15 +20,20 @@ class PostController extends Controller
     public function index(Request $request)
     {
 				if($request->has('search')){
-					$post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
+					$search_post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
 				}else{
 					$category = Category::all();
-					$post = Post::with('category')->orderBy('created_at', 'DESC')->paginate(3);
+					$post = Post::with(['category'])->orderBy('created_at', 'DESC')->paginate(3);
 					return view('post.index', compact('post', 'category'));
+					
 				}
-				// dd($request->all());
 				
     }
+
+		public function getCategory($id)
+		{
+			return $id;
+		}
 
     /**
      * Show the form for creating a new resource.

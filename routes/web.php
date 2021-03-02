@@ -34,3 +34,9 @@ Route::post('/store-post', [PostController::class, 'store'])->name('post.store')
 Route::put('/update-post', [PostController::class, 'update']);
 Route::get('/show-post/{id}', [PostController::class, 'show'])->name('post.show');
 Route::get('', [PostController::class, 'searchData']);
+
+Route::get('/get-category/{id}', [PostController::class, 'getCategory']);
+
+Route::get('/multiple', function(){
+	return view('multiple');
+});

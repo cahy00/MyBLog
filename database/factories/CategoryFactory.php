@@ -23,6 +23,7 @@ class CategoryFactory extends Factory
     {
         return [
             'category_name' => $this->faker->word,
+						'post_id'  			=> $this->faker->randomDigitNotNull,
         ];
     }
 }

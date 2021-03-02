@@ -23,7 +23,7 @@ class PostController extends Controller
 					$search_post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
 				}else{
 					$category = Category::all();
-					$post = Post::with(['category'])->orderBy('created_at', 'DESC')->paginate(3);
+					$post = Post::orderBy('created_at', 'DESC')->paginate(3);
 					return view('post.index', compact('post', 'category'));
 					
 				}
@@ -85,7 +85,6 @@ class PostController extends Controller
 				 */
         $post = Post::create([
 					'title'       => $request->title,
-					'category_id' => $request->category_id,
 					'body'        => $request->body,
 					'image'       => 'storage/img/' . $newName,
 					'slug'				=> Str::slug($request->title)
@@ -94,6 +93,10 @@ class PostController extends Controller
 				$post->tags()->create([
 					'tag_name' => $request->tag,
 					'slug'  	 => Str::slug($request->tag)
+				]);
+
+				$post->categories()->create([
+					'category_name' => $request->category_name
 				]);
 
 				//? $post = New Post;

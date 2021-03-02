@@ -27,9 +27,12 @@
 									</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-5">
 									<input type="text" class="oleez-input" id="tag" name="tag" required autocomplete="off" value="{{old('tag')}}" >
 									<label for="tag">*Tag</label>
+								</div>
+								<div class="form-group col-md-1">
+									<a href=""><img src="{{asset('assets/icons/add-fill.png')}}" alt=""></a>
 								</div>
 								<div class="form-group col-md-6">
 									<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >

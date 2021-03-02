@@ -28,22 +28,13 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
-										<label>*Tags</label>
-										<select class="select2" name="tag" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;" value="{{old('tag')}}" >
-											@foreach ($tag as $item)
-												<option>{{$item->tag_name}}</option>
-											@endforeach
-										</select>
+									<input type="text" class="oleez-input" id="tag" name="tag" required autocomplete="off" value="{{old('tag')}}" >
+									<label for="tag">*Tag</label>
 								</div>
-									<div class="form-group col-md-6">
-											<label>*Category</label>
-											<select class="form-control select2" name="category_name" style="width: 100%;" data-placeholder="Select a Category">
-												@foreach ($category as $item)
-														{{-- value="{{$item->id}}" --}}
-														<option>{{$item->category_name}}</option>
-												@endforeach
-											</select>
-									</div>
+								<div class="form-group col-md-6">
+									<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >
+									<label for="category">*Category</label>
+								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
@@ -99,3 +90,21 @@ $(function(){
 
 @endpush
 
+{{-- <div class="row">
+	<div class="form-group col-md-6">
+		<label>*Tags</label>
+		<select class="select2" name="tag" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;" value="{{old('tag')}}" >
+			@foreach ($tag as $item)
+				<option>{{$item->tag_name}}</option>
+			@endforeach
+		</select>
+	</div>
+	<div class="form-group col-md-6">
+		<label>*Category</label>
+		<select class="form-control select2" name="category_name" style="width: 100%;" data-placeholder="Select a Category">
+			@foreach ($category as $item)
+					<option value="{{$item->id}}">{{$item->category_name}}</option>
+			@endforeach
+		</select>
+	</div>
+</div> --}}

@@ -32,7 +32,9 @@ class PostController extends Controller
 
 		public function getCategory($id)
 		{
-			$showCategory = Post::where('category_id', $id)->count();
+			// $category = Category::all();
+			$showCategory = Post::with(['category']);
+			dd($showCategory->category);
 		}
 
     /**

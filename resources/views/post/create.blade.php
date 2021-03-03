@@ -26,7 +26,7 @@
 											{{-- <p class="text-danger">{{ $errors->first('nis') }}</p> --}}
 									</div>
 							</div>
-							{{-- <div class="row">
+							<div class="row">
 								<div class="form-group col-md-6">
 									<label>*Tags</label>
 									<select class="select2" name="tag" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;" value="{{old('tag')}}" >
@@ -34,7 +34,7 @@
 										<option value="marketing">Marketing</option>
 									</select>
 								</div>
-							</div> --}}
+							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
 									<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >

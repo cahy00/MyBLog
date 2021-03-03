@@ -26,16 +26,16 @@
 											{{-- <p class="text-danger">{{ $errors->first('nis') }}</p> --}}
 									</div>
 							</div>
+							{{-- <div class="row">
+								<div class="form-group col-md-6">
+									<label>*Tags</label>
+									<select class="select2" name="tag" multiple="multiple" data-placeholder="Select a Tags" style="width: 100%;" value="{{old('tag')}}" >
+										<option value="web programming">Web Programming</option>
+										<option value="marketing">Marketing</option>
+									</select>
+								</div>
+							</div> --}}
 							<div class="row">
-								<div class="form-group col-md-5">
-									<div class="tag">
-										<input type="text" class="oleez-input" id="tag" name="tag[]" required autocomplete="off" value="{{old('tag')}}" >
-										<label for="tag">*Tag</label>
-									</div>
-								</div>
-								<div class="form-group col-md-1">
-									<a href="" class="addRow"><img src="{{asset('assets/icons/add-fill.png')}}" alt=""></a>
-								</div>
 								<div class="form-group col-md-6">
 									<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >
 									<label for="category">*Category</label>
@@ -81,36 +81,30 @@
 	});
 </script>
 <script>
-$(function(){
-	setTimeout(() => {
-		$('#success-alert').innerHTML='';
-	}, 5000);
-});
-</script>
-<script>
 	$(document).ready(function() {
   $('#body').summernote();
 });
 </script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
 <script>
-	$('.addRow').on('click', function(){
-		addRow();
+	$(document).ready(function(){
+		var max = 10;
+
+		$('.addRow').click(function(){
+			$(`#tagRow`).after(`<div class="form-group col-md-5" id="tagRow">
+										<input type="text" class="oleez-input" id="tag" name="tag[]" required autocomplete="off" value="{{old('tag')}}" >
+										<label for="tag">*Tag</label>
+								</div>`)
+		});
 	});
-	const addRow = () => {
-		var input = `
-		<input 	type="text" 
-						class="oleez-input" 
-						id="tag" 
-						name="tag[]" 
-						autocomplete="off" 
-						value="{{old('tag')}}" 
-		>`
-		$('#add').append(input);
-	};
 </script>
 
 @endpush
 
+
+{{-- <div class="form-group col-md-1">
+	<a href="" class="addRow"><img src="{{asset('assets/icons/add-fill.png')}}" alt=""></a>
+</div> --}}
 {{-- <div class="row">
 	<div class="form-group col-md-6">
 		<label>*Tags</label>

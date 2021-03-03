@@ -17,4 +17,12 @@ class CategoryController extends Controller
 		{
 			return $id;
 		}
+
+		public function store(Request $request)
+		{
+			$category = New Category;
+			$category->category_name = $request->category_name;
+			$category->save();
+			return redirect('/input-post')->with('success','Category berhasil ditambah');
+		}
 }

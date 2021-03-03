@@ -62,10 +62,11 @@
 			<div class="col-md-4 blog-post-wrapper">
 				<div class="comment-section wow fadeInUp">
 					<h5 class="section-title">Masukkan Category baru .</h5>
-					<form action="" class="oleez-comment-form">
+					<form action="/store-category" method="POST" class="oleez-comment-form">
+						@csrf
 						<div class="row">
 							<div class="form-group col-md-12">
-								<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >
+								<input type="text" class="oleez-input" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >
 								<label for="category">Add Category</label>
 							</div>
 						</div>

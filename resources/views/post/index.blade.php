@@ -50,7 +50,13 @@
 @endsection
 
 @push('script')
-
+<script>
+	$(document).ready(function(){
+		$(`#add-category`).on('click', function(){
+			prompt();
+		});
+	});
+</script>
 @endpush
 
 <style>

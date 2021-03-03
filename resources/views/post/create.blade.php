@@ -7,7 +7,6 @@
 		<div class="row">
 			<div class="col-md-8 blog-post-wrapper">
 				<div class="comment-section wow fadeInUp">
-					<h5 class="section-title">Mengetik....</h5>
 					@if (session('success'))
 							<div class="alert alert-success" id="success-alert">{{session('success')}} <a href="/post" class="btn btn-primary-sm" >Lihat</a></div>
 					@endif
@@ -59,6 +58,24 @@
 							</div>
 					</form>
 				</div>
+			</div>
+			<div class="col-md-4 blog-post-wrapper">
+				<div class="comment-section wow fadeInUp">
+					<h5 class="section-title">Masukkan Category baru .</h5>
+					<form action="" class="oleez-comment-form">
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >
+								<label for="category">Add Category</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+									<button type="submit" class="btn btn-submit">Add Category</button>
+							</div>
+						</div>
+					</form>
+				</div>	
 			</div>
 		</div>
 	</div>

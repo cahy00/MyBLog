@@ -1,1 +1,3 @@
-{{-- {{$showCategory}} --}}
+{{$post}}
+<hr>
+{{$category}}

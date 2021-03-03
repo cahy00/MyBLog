@@ -22,7 +22,8 @@ class PostController extends Controller
 				if($request->has('search')){
 					$search_post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
 				}else{
-					$category = Category::all();
+					$category = Category::with(['posts'])->orderBy('created_at', 'ASC');
+					// $category = DB::table('categories')->distinct()->get('category_name');
 					$post = Post::orderBy('created_at', 'DESC')->paginate(3);
 					return view('post.index', compact('post', 'category'));
 					
@@ -32,9 +33,11 @@ class PostController extends Controller
 
 		public function getCategory($id)
 		{
-			// $category = Category::all();
-			$showCategory = Post::with(['category']);
-			dd($showCategory->category);
+			$post = Post::find($id)->categories()->first();
+			$category = Category::with('posts')->find($id);
+			// dd($post->categories);
+			return view('category.show', compact('post', 'category'));
+
 		}
 
     /**
@@ -85,6 +88,7 @@ class PostController extends Controller
 				 */
         $post = Post::create([
 					'title'       => $request->title,
+					'category_id' => 1,
 					'body'        => $request->body,
 					'image'       => 'storage/img/' . $newName,
 					'slug'				=> Str::slug($request->title)
@@ -95,19 +99,29 @@ class PostController extends Controller
 					'slug'  	 => Str::slug($request->tag)
 				]);
 
-				$post->categories()->create([
-					'category_name' => $request->category_name
-				]);
+				// $post->categories()->create([
+				// 	'category_name' => $request->category_name
+				// ]);
 
-				//? $post = New Post;
-				//? $post->title = $request->title;
-				//? $post->category_id = 1;
-				//? $post->body = $request->body;
-				//? if($request->hasFile('image')){
-				//?	$request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
-				//? 	$post->image = $request->file('image')->getClientOriginalName();
-				//? 	$post->save();
-				//? }
+				
+
+				// $post = New Post;
+				// $post->title = $request->title;
+				// $post->body = $request->body;
+				// $post->category_id = $request->category_id;
+				// $post->image = 'storage/img/' . $newName;
+				// $post->save();
+				
+				// $category = New Category; $category->posts()->create([
+				// 	'category_name' => $request->category_name
+				// ]);
+				// $category->save();
+
+				// if($request->hasFile('image')){
+				// 	$request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+				// 	$post->image = $request->file('image')->getClientOriginalName();
+				// 	$post->save();
+				// }
 
 				return \redirect('input-post')->with('success', 'Tulisan Berhasil di Posting');
 

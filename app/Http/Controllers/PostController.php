@@ -22,7 +22,8 @@ class PostController extends Controller
 				if($request->has('search')){
 					$search_post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
 				}else{
-					$category = Category::with(['posts'])->orderBy('created_at', 'ASC');
+					// $category = Category::with(['posts'])->orderBy('created_at', 'ASC');
+					$category = Category::all();
 					// $category = DB::table('categories')->distinct()->get('category_name');
 					$post = Post::orderBy('created_at', 'DESC')->paginate(3);
 					return view('post.index', compact('post', 'category'));

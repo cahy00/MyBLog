@@ -36,8 +36,12 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
-									<input type="text" class="oleez-input @error('category') is-invalid @enderror" id="category" name="category_name" required autocomplete="off" value="{{old('category')}}" >
-									<label for="category">*Category</label>
+									<label>*Category</label>
+									<select class="form-control select2" name="category_name" style="width: 100%;" data-placeholder="Select a Category">
+										@foreach ($category as $item)
+												<option value="{{$item->id}}">{{$item->category_name}}</option>
+										@endforeach
+									</select>
 								</div>
 							</div>
 							<div class="row">

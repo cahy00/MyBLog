@@ -23,6 +23,6 @@ class CategoryController extends Controller
 			$category = New Category;
 			$category->category_name = $request->category_name;
 			$category->save();
-			return redirect('/input-post')->with('success','Category berhasil ditambah');
+			return redirect('/input-post')->with('success-category','Category berhasil ditambah');
 		}
 }

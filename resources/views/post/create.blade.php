@@ -65,6 +65,12 @@
 			</div>
 			<div class="col-md-4 blog-post-wrapper">
 				<div class="comment-section wow fadeInUp">
+					@if (session('success-category'))
+							<div class="alert alert-success" id="success-alert">{{session('success-category')}}</div>
+					@endif
+					@if (session('error'))
+							<div class="alert alert-danger">Berhasil Input</div>
+					@endif
 					<h5 class="section-title">Masukkan Category baru .</h5>
 					<form action="/store-category" method="POST" class="oleez-comment-form">
 						@csrf

@@ -11,8 +11,8 @@
 							{{-- Format waktu January 29, 2020 --}}
 							<p class="post-date">{{$item->created_at->format('M d, Y')}} by Sulistyo Cahyo</p> 
 							<h4 class="post-title"><a href="/show-post/{{$item->id}}" style="text-decoration: none; color:black">{{$item->title}}</a></h4>
-							<p class="post-excerpt">{!!substr($item->body, 0, 150)!!} <span>....</span></p>
-							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE</a>
+							<p class="post-excerpt">{!!substr($item->body, 0, 150)!!}</p>
+							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE......</a>
 						</article>
 					@endforeach
 					<span>
@@ -28,7 +28,9 @@
 					</div>
 				</main>
 				@endif
-				
+
+
+
 				<div class="col-md-4">
 					<div class="sidebar-widget wow fadeInUp">
 						<h5 class="widget-title">Categories</h5>

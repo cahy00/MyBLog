@@ -24,6 +24,8 @@ class PostController extends Controller
 				}else{
 					// $category = Category::with(['posts'])->orderBy('created_at', 'ASC');
 					$category = Category::all();
+					// $countPost = Post::where('category_id', $);
+
 					// $category = DB::table('categories')->distinct()->get('category_name');
 					$post = Post::orderBy('created_at', 'DESC')->paginate(3);
 					return view('post.index', compact('post', 'category'));
@@ -34,10 +36,11 @@ class PostController extends Controller
 
 		public function getCategory($id)
 		{
-			$category = Category::with('posts')->find($id);
+			$category = Category::find($id);
+			// $category = Category::all();
 			$countPost = Post::where('category_id', $id);
 			return view('category.show', compact('category'));
-
+			// dd($countPost->count());
 
 		}
 

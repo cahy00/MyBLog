@@ -1,22 +1,20 @@
 @extends('layouts.index')
 
 @section('content')
-<main class="blog-standard">
+{{-- <main class="blog-standard">
 	<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					{{-- @foreach ($category as $item) --}}
 						<article class="blog-post wow fadeInUp">
 							<img src="{{asset($category->posts->image)}}" alt="blog post" class="post-thumbnail img-thumbnail" height="1640" width="924" style="height: 1640px">
-							{{-- Format waktu January 29, 2020 --}}
-							<p class="post-date">{{$category->posts->created_at->format('M d, Y')}} by Sulistyo Cahyo</p> 
-							<h4 class="post-title"><a href="/show-post/{{$category->posts->id}}" style="text-decoration: none; color:black">{{$category->title}}</a></h4>
+							Format waktu January 29, 2020
+							<p class="post-date">{{$category->posts->created_at->format('M d, Y')}} by Sulistyo Cahyo</p>
+							<h4 class="post-title"><a href="/show-post/{{$category->posts->id}}" style="text-decoration: none; color:black">{{$category->posts->title}}</a></h4>
 							<p class="post-excerpt">{!!substr($category->posts->body, 0, 150)!!} <span>....</span></p>
 							<a href="/show-post/{{$category->posts->id}}" class="post-permalink">READ MORE</a>
-						</article>
-					{{-- @endforeach --}}
+						</article> 
 					<span>
-						{{-- {{$category->links('vendor.pagination.simple-bootstrap-4')}} --}}
+						{{$category->links('vendor.pagination.simple-bootstrap-4')}}
 					</span>
 				</div>
 
@@ -30,6 +28,11 @@
 				@endif
 			</div>
 	</div>
-</main>
+</main> --}}
 @endsection
+
+{{-- @foreach ($category as $item)
+		{{$item->posts}}
+@endforeach --}}
+{{$category->title}}
 

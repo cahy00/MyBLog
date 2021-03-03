@@ -37,7 +37,7 @@
 							<div class="row">
 								<div class="form-group col-md-6">
 									<label>*Category</label>
-									<select class="form-control select2" name="category_name" style="width: 100%;" data-placeholder="Select a Category">
+									<select class="form-control select2" name="category_id" style="width: 100%;" data-placeholder="Select a Category">
 										@foreach ($category as $item)
 												<option value="{{$item->id}}">{{$item->category_name}}</option>
 										@endforeach

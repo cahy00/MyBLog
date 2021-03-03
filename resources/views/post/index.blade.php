@@ -28,8 +28,7 @@
 					</div>
 				</main>
 				@endif
-
-
+				
 				<div class="col-md-4">
 					<div class="sidebar-widget wow fadeInUp">
 						<h5 class="widget-title">Categories</h5>

@@ -34,10 +34,10 @@ class PostController extends Controller
 
 		public function getCategory($id)
 		{
-			$post = Post::find($id)->categories()->first();
 			$category = Category::with('posts')->find($id);
-			// dd($post->categories);
-			return view('category.show', compact('post', 'category'));
+			$countPost = Post::where('category_id', $id);
+			return view('category.show', compact('category'));
+
 
 		}
 
@@ -89,7 +89,7 @@ class PostController extends Controller
 				 */
         $post = Post::create([
 					'title'       => $request->title,
-					'category_id' => 1,
+					'category_id' => $request->category_id,
 					'body'        => $request->body,
 					'image'       => 'storage/img/' . $newName,
 					'slug'				=> Str::slug($request->title)

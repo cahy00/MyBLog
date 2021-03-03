@@ -11,6 +11,6 @@ class Category extends Model
 		protected $guarded = [];
 
 		public function posts(){
-			return $this->belongsTo(Post::class);
+			return $this->hasOne(Post::class);
 		}
 }

@@ -10,10 +10,10 @@ class Post extends Model
     use HasFactory;
 		protected $guarded = [];
 
-		public function categories()
-		{
-			return $this->hasOne(Category::class);
-		}
+		// public function categories()
+		// {
+		// 	return $this->hasOne(Category::class);
+		// }
 
 		public function tags()
 		{

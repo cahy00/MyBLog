@@ -19,19 +19,9 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-				if($request->has('search')){
-					$search_post = Post::where('title', 'LIKE', '%' . $request->search . '%')->paginate(3);
-				}else{
-					// $category = Category::with(['posts'])->orderBy('created_at', 'ASC');
-					$category = Category::all();
-					// $countPost = Post::where('category_id', $);
-
-					// $category = DB::table('categories')->distinct()->get('category_name');
-					$post = Post::orderBy('created_at', 'DESC')->paginate(3);
-					return view('post.index', compact('post', 'category'));
-					
-				}
-				
+			$category = Category::all();
+			$post = Post::orderBy('created_at', 'DESC')->paginate(3);
+			return view('post.index', compact('post', 'category'));
     }
 
 		public function getCategory($id)
@@ -208,7 +198,7 @@ class PostController extends Controller
 			->where('title', 'like', '%' . $search . '%')
 			->get();
 
-			return $result;
+			return view('post.search', compact('result'));
 		}
 
 		

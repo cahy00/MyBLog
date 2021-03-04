@@ -3,6 +3,7 @@
 @section('content')
 <main class="blog-standard">
 	<div class="container">
+		<h1 class="oleez-page-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">{{$categoryTitle->category_name}}</h1>
 			<div class="row">
 				<div class="col-md-8">
 					@foreach ($category->posts as $item)

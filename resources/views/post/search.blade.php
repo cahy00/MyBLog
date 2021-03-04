@@ -25,7 +25,7 @@
 					<div class="container">
 							<h1 class="error-code wow fadeInUp">404</h1>
 							<p class="error-description wow fadeInUp">Oops! The page you are looking for does not exist. 
-								It might have been removed or deleted.Go back to home page now, or stay, it is quiet out <a href="/post">Here</a>.</p>
+								It might have been removed or deleted.Go back to home page now, or stay, it is quiet out <a href="/">Here</a>.</p>
 					</div>
 				</main>
 				@endif

@@ -11,4 +11,9 @@ class Tag extends Model
 		protected $fillable = [
 			'tag_name', 'slug'
 		];
+
+		public function posts()
+		{
+			return $this->belongsTo(Post::class);
+		}
 }

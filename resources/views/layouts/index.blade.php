@@ -71,7 +71,7 @@
 			<button type="button" class="close" aria-label="Close" data-dismiss="searchModal">
 					<span aria-hidden="true">&times;</span>
 			</button>
-			<form action="/post" method="get" class="oleez-overlay-search-form">
+			<form action="/post/search" method="get" class="oleez-overlay-search-form">
 					<label for="search" class="sr-only">Search</label>
 					<input type="search" class="oleez-overlay-search-input" id="search" name="search" placeholder="Search here" autocomplete="off" autofocus="on">
 			</form>

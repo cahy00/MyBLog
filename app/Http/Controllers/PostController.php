@@ -202,12 +202,13 @@ class PostController extends Controller
 
 		public function searchData(Request $request)
 		{
-			// if($request->has('search')){
-			// 	$post = Post::where('title','LIKE','%' . $request->search . '%')->get();
-			// }else{
-			// 	$post = Post::with('category')->orderBy('created_at', 'DESC')->paginate(3);
-			// }
-			dd($request->all());
+			$search = $request->search;
+
+			$result = DB::table('posts')
+			->where('title', 'like', '%' . $search . '%')
+			->get();
+
+			return $result;
 		}
 
 		

@@ -193,12 +193,13 @@ class PostController extends Controller
 		public function searchData(Request $request)
 		{
 			$search = $request->search;
+			$category = Category::all();
 
 			$result = DB::table('posts')
 			->where('title', 'like', '%' . $search . '%')
 			->get();
 
-			return view('post.search', compact('result'));
+			return view('post.search', compact('result', 'category'));
 		}
 
 		

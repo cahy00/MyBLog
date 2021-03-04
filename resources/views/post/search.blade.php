@@ -27,7 +27,7 @@
 							<p class="error-description wow fadeInUp">Oops! The page you are looking for does not exist. It might have been removed or deleted.Go back to home page now, or stay, it is quiet out here.</p>
 					</div>
 				</main>
-				@endif
+				@endif --}}
 
 				<div class="col-md-4">
 					<div class="sidebar-widget wow fadeInUp">
@@ -40,7 +40,7 @@
 								</ul>
 						</div>
 					</div>
-				</div> --}}
+				</div> 
 
 			</div>
 	</div>

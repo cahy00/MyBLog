@@ -202,5 +202,6 @@ class PostController extends Controller
 			return view('post.search', compact('result', 'category'));
 		}
 
+
 		
 }

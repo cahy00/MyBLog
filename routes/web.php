@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -16,6 +18,12 @@ use RealRashid\SweetAlert\Facades\Alert;
  */
 Route::get('/tag', [PostController::class, 'create']);
 Route::post('/store-tag', [TagController::class, 'store']);
+
+/**
+ * ?Route Authentication
+ */
+Route::get('/login', [AuthController::class, 'index']);
+
 
 /**
  * ?Route Dashboard

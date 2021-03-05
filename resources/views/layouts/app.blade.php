@@ -9,6 +9,7 @@
 
     <title>DataTables | Gentelella</title>
 
+		<link rel="icon" href="{{asset('assets/icons/fp.png')}}" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="{{asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -36,7 +37,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><img src="{{asset('assets/icons/fp.png')}}" alt=""></i> <strong style="color: black">BE DIFFERENT</strong></a>
             </div>
 
             <div class="clearfix"></div>
@@ -44,11 +45,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="{{asset('images/img.jpg')}}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>joe</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -65,11 +66,23 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-laptop"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-laptop"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/datauser">Data User</a></li>
                       <li><a href="/datacategory">Data Category</a></li>
                       <li><a href="/datapost">Data Post</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Forms</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-edit"></i> Input <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/datauser">Post</a></li>
+                      <li><a href="/datacategory">Category</a></li>
+                      <li><a href="/datapost">Tag</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -89,7 +102,7 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="images/img.jpg" alt="">John Doe
+                      <img src="{{asset('images/img.jpg')}}" alt="">John Doe
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item"  href="javascript:;"> Profile</a>

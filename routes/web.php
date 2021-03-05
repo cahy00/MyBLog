@@ -5,12 +5,21 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login/check', [AuthController::class, 'store']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/dashboard', [DashboardController::class, 'index']);
+
+});
 
 /**
  * ?Route Tag
@@ -18,12 +27,9 @@ use RealRashid\SweetAlert\Facades\Alert;
 Route::get('/tag', [PostController::class, 'create']);
 Route::post('/store-tag', [TagController::class, 'store']);
 
-
-
 /**
  * ?Route Dashboard
  */
-Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 /**

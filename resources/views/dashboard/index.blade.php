@@ -1,3 +1,5 @@
-<p>hola</p>
+@extends('layouts.app')
 
-<a href="/logout">Logout</a>
+@section('content')
+		<h3>Welcome</h3>
+@endsection

@@ -20,13 +20,21 @@ Route::get('/logout', [AuthController::class, 'logout']);
  * ?Route Group Middleware
  */
 Route::group(['middleware' => 'auth'], function(){
+	
 	Route::get('/dashboard', [DashboardController::class, 'index']);
+
+
+	/**
+	 * ?Route Admin
+	 */
+	Route::get('/datauser', function(){
+		return view('admin.datauser');
+	});
+	Route::view('/admin', 'layouts.app');
+
 });
 
-/**
- * ?Route Admin
- */
-Route::view('/admin', 'layouts.admin');
+
 
 /**
  * ?Route Tag

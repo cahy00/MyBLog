@@ -9,6 +9,9 @@
 
     <title>DataTables | Gentelella</title>
 
+		<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
+
 		<link rel="icon" href="{{asset('assets/icons/fp.png')}}" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -29,6 +32,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{{asset('build/css/custom.min.css')}}" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">
@@ -80,7 +84,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-edit"></i> Input <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/datauser">Post</a></li>
+                      <li><a href="/createpost">Post</a></li>
                       <li><a href="/datacategory">Category</a></li>
                       <li><a href="/datapost">Tag</a></li>
                     </ul>
@@ -162,5 +166,9 @@
     <!-- Custom Theme Scripts -->
     <script src="{{asset('build/js/custom.min.js')}}"></script>
 
+		<!-- jQuery Tags Input -->
+		<script src="{{asset('vendors/jquery.tagsinput/src/jquery.tagsinput.js')}}"></script>
+
+		@stack('script')
   </body>
 </html>

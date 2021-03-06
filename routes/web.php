@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function(){
 		return view('admin.datauser');
 	});
 	Route::view('/admin', 'layouts.app');
+	Route::get('/createpost', [DashboardController::class, 'create']);
+	Route::post('/processpost', [DashboardController::class, 'store']);
 
 });
 

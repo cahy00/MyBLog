@@ -22,6 +22,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::group(['middleware' => 'auth'], function(){
 	
 	Route::get('/dashboard', [DashboardController::class, 'index']);
+	Route::get('/input-post', [PostController::class, 'create']);
 
 
 	/**
@@ -51,7 +52,6 @@ Route::post('/store-tag', [TagController::class, 'store']);
  *? Route Post
  */
 Route::get('/', [PostController::class, 'index']);
-Route::get('/input-post', [PostController::class, 'create']);
 Route::post('/store-post', [PostController::class, 'store'])->name('post.store');
 Route::put('/update-post', [PostController::class, 'update']);
 Route::get('/show-post/{id}', [PostController::class, 'show'])->name('post.show');

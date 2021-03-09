@@ -63,3 +63,5 @@ Route::get('/get-category/{id}', [PostController::class, 'getCategory']);
 Route::get('/multiple', function(){
 	return view('multiple');
 });
+
+Route::get('/test', [TestController::class, 'index']);

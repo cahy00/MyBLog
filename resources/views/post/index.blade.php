@@ -12,7 +12,7 @@
 							<p class="post-date">{{$item->created_at->format('M d, Y')}} by Sulistyo Cahyo</p> 
 							<h4 class="post-title"><a href="/show-post/{{$item->id}}" style="text-decoration: none; color:black">{{$item->title}}</a></h4>
 							<p class="post-excerpt">{!!substr($item->body, 0, 150)!!}</p>
-							<a href="/show-post/{{$item->id}}" class="post-permalink">READ MORE......</a>
+							<a href="/show-post/{{$item->id}}" class="post-permalink">READ ORE......</a>
 						</article>
 					@endforeach
 					<span>
